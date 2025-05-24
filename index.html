@@ -6,7 +6,6 @@
 <title>Creche Reborn</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;600&display=swap');
-  /* Fallback para Arial */
   body {
     font-family: 'SF Pro Text', Arial, sans-serif;
     margin: 0;
@@ -55,61 +54,92 @@
     margin: 3rem auto;
     padding: 0 1rem;
   }
-  section {
-    display: none;
-  }
-  section.active {
-    display: block;
-  }
+
   /* Sobre */
   #sobre p {
     font-size: 1.1rem;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
     color: #3c3c4399;
   }
-  /* Serviços estilo cards */
-  #servicos .servico-card {
+
+  /* Serviços estilo cards com interação */
+  #servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+  }
+  .servico-card {
     border: 1px solid #d2d2d7;
     border-radius: 14px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgb(0 0 0 / 0.05);
-    transition: box-shadow 0.3s ease;
+    padding: 1.5rem 2rem;
     background: #fff;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.05);
+    cursor: pointer;
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
-  #servicos .servico-card:hover {
-    box-shadow: 0 10px 20px rgb(0 0 0 / 0.12);
+  .servico-card:hover {
+    box-shadow: 0 12px 30px rgb(0 0 0 / 0.15);
+    transform: scale(1.05);
   }
-  #servicos h2 {
+  .servico-card h2 {
     margin-top: 0;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #1d1d1f;
   }
-  #servicos p {
+  .servico-card p {
     color: #3c3c4399;
     font-size: 1rem;
-    margin: 1rem 0 1.5rem 0;
+    margin: 0.5rem 0 1rem 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
   }
-  #servicos button {
+
+  .servico-card .descricao-extra {
+    max-height: 0;
+    opacity: 0;
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    margin-top: 0;
+  }
+
+  .servico-card.expanded .descricao-extra {
+    max-height: 200px; /* espaço para texto */
+    opacity: 1;
+    margin-top: 1rem;
+  }
+
+  /* Botão Selecionar */
+  .servico-card button {
     background: #0071e3;
     color: white;
     border: none;
-    padding: 0.75rem 2rem;
+    padding: 0.6rem 1.5rem;
     font-weight: 600;
     font-size: 1rem;
     border-radius: 12px;
     cursor: pointer;
     transition: background 0.3s;
   }
-  #servicos button:hover {
+  .servico-card button:hover {
     background: #005bb5;
   }
 
   /* Pagamentos */
   #pagamentos {
+    margin-top: 3rem;
     text-align: center;
+    border-top: 1px solid #d2d2d7;
+    padding-top: 3rem;
+    display: none;
+  }
+  #pagamentos.active {
+    display: block;
   }
   #pagamentos h2 {
     font-weight: 600;
@@ -177,9 +207,6 @@
     main {
       margin: 2rem 1rem;
     }
-    #servicos .servico-card {
-      padding: 1.2rem;
-    }
   }
 </style>
 </head>
@@ -190,102 +217,119 @@
 </header>
 
 <nav>
-  <a href="#" id="nav-sobre" class="active" onclick="abrirSecao('sobre')">Sobre</a>
-  <a href="#" id="nav-servicos" onclick="abrirSecao('servicos')">Serviços</a>
-  <a href="#" id="nav-pagamentos" style="display:none;" onclick="abrirSecao('pagamentos')">Pagamentos</a>
+  <a href="#" class="active" onclick="scrollPara('sobre')">Sobre</a>
+  <a href="#" onclick="scrollPara('servicos')">Serviços</a>
+  <a href="#" onclick="scrollPara('pagamentos')">Pagamentos</a>
 </nav>
 
 <main>
-  <section id="sobre" class="active">
+  <section id="sobre">
     <p>Na Creche Reborn, cuidamos com carinho e atenção das suas bonecas reborn. Nosso compromisso é oferecer serviços especializados que valorizem e prolonguem a beleza e a integridade dos seus bebês reborn, garantindo um cuidado profissional e amoroso.</p>
   </section>
 
   <section id="servicos">
-    <div class="servico-card">
+    <div class="servico-card" onclick="toggleDescricao(this)">
       <h2>Banho e Cuidados Especiais</h2>
-      <p>Realizamos limpeza delicada e hidratação dos bebês reborn para manter a maciez e aparência original, utilizando produtos específicos e técnicas suaves.</p>
-      <button onclick="selecionarServico('Banho e Cuidados Especiais')">Selecionar Serviço</button>
+      <p>Limpeza delicada para manter a maciez e aparência original.</p>
+      <p class="descricao-extra">Utilizamos produtos específicos e técnicas suaves para hidratar e preservar a beleza dos seus bebês reborn, protegendo suas características únicas.</p>
+      <button onclick="selecionarServico(event, 'Banho e Cuidados Especiais')">Selecionar Serviço</button>
     </div>
-    <div class="servico-card">
+    <div class="servico-card" onclick="toggleDescricao(this)">
       <h2>Roupinhas Sob Medida</h2>
-      <p>Confecionamos roupas exclusivas e confortáveis, personalizadas para cada bebê reborn, respeitando o tamanho e estilo desejado.</p>
-      <button onclick="selecionarServico('Roupinhas Sob Medida')">Selecionar Serviço</button>
+      <p>Roupas exclusivas e confortáveis para cada bebê reborn.</p>
+      <p class="descricao-extra">Personalizamos cada peça respeitando o tamanho e estilo desejado, usando tecidos de qualidade para o conforto e beleza dos seus reborns.</p>
+      <button onclick="selecionarServico(event, 'Roupinhas Sob Medida')">Selecionar Serviço</button>
     </div>
-    <div class="servico-card">
+    <div class="servico-card" onclick="toggleDescricao(this)">
       <h2>Ensaio Fotográfico Profissional</h2>
-      <p>Capturamos momentos únicos dos seus bebês reborn com sessões fotográficas em estúdio ou ambiente externo, com iluminação e cenário personalizados.</p>
-      <button onclick="selecionarServico('Ensaio Fotográfico Profissional')">Selecionar Serviço</button>
+      <p>Momentos únicos capturados com iluminação e cenário personalizados.</p>
+      <p class="descricao-extra">Sessões em estúdio ou ambientes externos, focando em destacar a beleza e delicadeza dos seus bebês reborn com técnicas profissionais.</p>
+      <button onclick="selecionarServico(event, 'Ensaio Fotográfico Profissional')">Selecionar Serviço</button>
     </div>
-    <div class="servico-card">
+    <div class="servico-card" onclick="toggleDescricao(this)">
       <h2>Consultoria Personalizada</h2>
-      <p>Orientamos cuidados, restauração e conservação para colecionadores e entusiastas, oferecendo dicas e técnicas especializadas.</p>
-      <button onclick="selecionarServico('Consultoria Personalizada')">Selecionar Serviço</button>
+      <p>Dicas e técnicas para colecionadores e entusiastas.</p>
+      <p class="descricao-extra">Oferecemos orientações detalhadas para cuidados, restauração e conservação dos seus reborns, garantindo que eles se mantenham sempre impecáveis.</p>
+      <button onclick="selecionarServico(event, 'Consultoria Personalizada')">Selecionar Serviço</button>
     </div>
-    <div class="servico-card">
+    <div class="servico-card" onclick="toggleDescricao(this)">
       <h2>Transporte Seguro</h2>
-      <p>Serviço de transporte especializado para garantir que seus bebês reborn cheguem em segurança ao destino, com embalagens e cuidados apropriados.</p>
-      <button onclick="selecionarServico('Transporte Seguro')">Selecionar Serviço</button>
+      <p>Garantia de entrega dos reborns em segurança.</p>
+      <p class="descricao-extra">Utilizamos embalagens e métodos adequados para transportar seus bebês reborn com total proteção e cuidado até o destino final.</p>
+      <button onclick="selecionarServico(event, 'Transporte Seguro')">Selecionar Serviço</button>
+    </div>
+    <div class="servico-card" onclick="toggleDescricao(this)">
+      <h2>Restauro e Reparos</h2>
+      <p>Recuperação da beleza original dos reborns.</p>
+      <p class="descricao-extra">Reparos especializados para retoques em pintura, cabelos e estrutura, trazendo vida nova para seus bebês reborn.</p>
+      <button onclick="selecionarServico(event, 'Restauro e Reparos')">Selecionar Serviço</button>
+    </div>
+    <div class="servico-card" onclick="toggleDescricao(this)">
+      <h2>Venda de Acessórios</h2>
+      <p>Produtos exclusivos para personalizar seu reborn.</p>
+      <p class="descricao-extra">Oferecemos acessórios delicados, desde chupetas, fraldas, até itens decorativos para complementar a aparência do seu bebê reborn.</p>
+      <button onclick="selecionarServico(event, 'Venda de Acessórios')">Selecionar Serviço</button>
     </div>
   </section>
 
   <section id="pagamentos">
-    <h2>Pagamento do Serviço</h2>
-    <p id="servico-selecionado" style="font-weight: 600; font-size: 1.3rem; margin-bottom: 1rem;"></p>
-    <p>Utilize o QR Code abaixo para pagar via PIX com rapidez e segurança:</p>
-    <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=00020126580014BR.GOV.BCB.PIX01372c90695b-fe24-423f-9436-bbce1ed92b5205204000053039865404100.005802BR5910Creche Reborn6009Sao Paulo61080540900062070503***6304A13A" alt="QR Code PIX" />
-    <p>Ou copie a chave PIX:</p>
-    <input type="text" id="pix-key" readonly value="2c90695b-fe24-423f-9436-bbce1ed92b52" />
+    <h2>Pagamento via PIX</h2>
+    <p>Para facilitar, use nossa chave PIX abaixo para pagamento rápido e seguro.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/PIX_logo.svg/256px-PIX_logo.svg.png" alt="Logo PIX" />
+    <input id="pix-key" type="text" readonly value="123e4567-e89b-12d3-a456-426614174000" />
     <br />
-    <button id="btn-copy" onclick="copiarChave()">Copiar Chave PIX</button>
+    <button id="btn-copy" onclick="copiarPix()">Copiar Chave PIX</button>
     <br />
-    <button id="btn-voltar" onclick="voltarParaServicos()">← Voltar para Serviços</button>
+    <button id="btn-voltar" onclick="voltarPagamentos()">Voltar</button>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Creche Reborn. Todos os direitos reservados.</p>
+  &copy; 2025 Creche Reborn. Todos os direitos reservados.
 </footer>
 
 <script>
-  function abrirSecao(secao) {
-    // Remove active de todas as seções e nav links
-    ['sobre', 'servicos', 'pagamentos'].forEach(s => {
-      document.getElementById(s).classList.remove('active');
-      const nav = document.getElementById('nav-' + s);
-      if(nav) nav.classList.remove('active');
+  function scrollPara(id) {
+    event.preventDefault();
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    event.target.classList.add('active');
+
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function toggleDescricao(card) {
+    // Evita que o click no botão dispare o toggle do card
+    if(event.target.tagName.toLowerCase() === 'button') return;
+
+    card.classList.toggle('expanded');
+  }
+
+  function selecionarServico(event, nomeServico) {
+    event.stopPropagation();
+    alert('Você selecionou o serviço: ' + nomeServico);
+  }
+
+  function copiarPix() {
+    const pixKey = document.getElementById('pix-key');
+    pixKey.select();
+    pixKey.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(pixKey.value).then(() => {
+      alert('Chave PIX copiada para a área de transferência!');
     });
-
-    // Mostra a seção escolhida e marca o nav link
-    document.getElementById(secao).classList.add('active');
-    document.getElementById('nav-' + secao).classList.add('active');
   }
 
-  function selecionarServico(nomeServico) {
-    // Atualiza texto serviço selecionado
-    document.getElementById('servico-selecionado').textContent = nomeServico;
-
-    // Mostra botão Pagamentos no menu
-    document.getElementById('nav-pagamentos').style.display = 'inline-block';
-
-    // Abre aba pagamentos
-    abrirSecao('pagamentos');
+  function voltarPagamentos() {
+    document.getElementById('pagamentos').classList.remove('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function copiarChave() {
-    const pixInput = document.getElementById('pix-key');
-    pixInput.select();
-    pixInput.setSelectionRange(0, 99999); // Para mobile
-    document.execCommand('copy');
-    alert('Chave PIX copiada!');
-  }
+  // Navegar para seção Pagamentos ao clicar no link
+  document.querySelector('nav a[href="#pagamentos"]').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('pagamentos').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
-  function voltarParaServicos() {
-    // Esconde aba pagamentos no menu
-    document.getElementById('nav-pagamentos').style.display = 'none';
-
-    // Abre aba serviços
-    abrirSecao('servicos');
-  }
 </script>
 
 </body>
