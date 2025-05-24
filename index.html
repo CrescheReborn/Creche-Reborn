@@ -286,6 +286,35 @@
   <main class="container" role="main">
     <!-- Sobre, Serviços, Contato mantidos -->
 
+    <section id="pix" style="background:#e0f7fa; padding:1.5rem; border-radius:8px; max-width:400px; margin:2rem auto; text-align:center;">
+  <h2>Pagamento via PIX</h2>
+  <p>Use o QR Code abaixo para pagar via PIX rapidamente.</p>
+  
+  <!-- QR Code gerado via Google Chart API -->
+  <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=00020126580014BR.GOV.BCB.PIX01372c90695b-fe24-423f-9436-bbce1ed92b5205204000053039865404100.005802BR5910Creche Reborn6009Sao Paulo61080540900062070503***6304A13A" alt="QR Code PIX Creche Reborn" style="margin: 1rem auto; display:block;"/>
+  
+  <p>Ou copie a chave PIX abaixo:</p>
+  <input type="text" value="2c90695b-fe24-423f-9436-bbce1ed92b52" id="pix-key" readonly style="width:100%; padding:0.5rem; font-size:1rem; text-align:center; border:1px solid #ccc; border-radius:4px;" />
+  <button onclick="copyPixKey()" style="margin-top:1rem; background:#00796b; color:#fff; border:none; padding:0.8rem 1.5rem; border-radius:6px; font-weight:600; cursor:pointer;">
+    Copiar Chave PIX
+  </button>
+  
+  <p style="font-size:0.85rem; color:#555; margin-top:1rem;">
+    Após o pagamento, envie o comprovante pelo WhatsApp para confirmar.
+  </p>
+</section>
+
+<script>
+  function copyPixKey() {
+    const pixInput = document.getElementById('pix-key');
+    pixInput.select();
+    pixInput.setSelectionRange(0, 99999); // para mobile
+    document.execCommand('copy');
+    alert('Chave PIX copiada!');
+  }
+</script>
+
+    
     <section id="comprar" tabindex="-1">
       <h2>Comprar Serviços</h2>
       <form id="payment-form" style="max-width:400px; margin: 0 auto; text-align:left;">
