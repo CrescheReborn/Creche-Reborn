@@ -39,6 +39,18 @@
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      text-align: center;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #25d366;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
@@ -118,7 +130,10 @@
 
   <section class="contato">
     <h2>Contato</h2>
-    <p>Fale com a gente pelo e-mail: <strong>crechereborn@email.com</strong></p>
+    <p>Fale com a gente pelo WhatsApp:</p>
+    <a class="whatsapp-btn" href="https://wa.me/5511987846694" target="_blank">
+      📲 Conversar no WhatsApp
+    </a>
   </section>
 
   <footer>
