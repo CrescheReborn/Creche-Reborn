@@ -1,10 +1,9 @@
-# Creche-Reborn
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Site Pessoal</title>
+  <title>Creche Reborn</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -49,8 +48,6 @@
       padding: 1rem;
       margin-top: 2rem;
     }
-
-    /* RESPONSIVO */
 
     @media (max-width: 600px) {
       header {
@@ -101,31 +98,31 @@
 <body>
 
   <header>
-    <h1>Bem-vindo ao Meu Site</h1>
-    <p>Um espaço pessoal com muito carinho</p>
+    <h1>Creche Reborn</h1>
+    <p>Um lugar de carinho e cuidado para os seus bebês reborn</p>
   </header>
 
   <section>
-    <h2>Sobre Mim</h2>
-    <p>Olá! Eu sou apaixonado(a) por tecnologia, design e comunicação. Criei este espaço para compartilhar ideias, projetos e dicas.</p>
+    <h2>Sobre Nós</h2>
+    <p>Somos apaixonados por bonecas reborn e criamos um espaço onde elas recebem o cuidado que merecem.</p>
   </section>
 
   <section>
-    <h2>Meus Projetos</h2>
+    <h2>Serviços</h2>
     <ul>
-      <li>Projeto 1 - Site Responsivo</li>
-      <li>Projeto 2 - Portfólio Interativo</li>
-      <li>Projeto 3 - Blog Pessoal</li>
+      <li>Banho e cuidados especiais</li>
+      <li>Roupinhas sob medida</li>
+      <li>Ensaio fotográfico</li>
     </ul>
   </section>
 
   <section class="contato">
     <h2>Contato</h2>
-    <p>Entre em contato comigo através do e-mail: <strong>seunome@email.com</strong></p>
+    <p>Fale com a gente pelo e-mail: <strong>crechereborn@email.com</strong></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Meu Nome. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Creche Reborn. Todos os direitos reservados.</p>
   </footer>
 
 </body>
