@@ -26,7 +26,7 @@
     nav {
       background-color: #fde6ef;
       text-align: center;
-      padding: 0.8rem;
+      padding: 0.8rem 0;
     }
 
     nav a {
@@ -34,6 +34,7 @@
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
+      transition: text-decoration 0.2s;
     }
 
     nav a:hover {
@@ -48,6 +49,7 @@
 
     h1 {
       font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     h2 {
@@ -72,6 +74,12 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #128c7e;
     }
 
     footer {
@@ -94,6 +102,10 @@
       nav a {
         display: block;
         margin: 0.5rem 0;
+      }
+
+      main {
+        padding: 1rem 0.2rem;
       }
     }
   </style>
@@ -129,7 +141,7 @@
     <section id="contato" class="contato">
       <h2>Contato</h2>
       <p>Fale com a gente pelo WhatsApp:</p>
-      <a class="whatsapp-btn" href="https://wa.me/5511987846694" target="_blank" aria-label="Conversar conosco no WhatsApp">
+      <a class="whatsapp-btn" href="https://wa.me/5511987846694" target="_blank" rel="noopener" aria-label="Conversar conosco no WhatsApp">
         📲 Conversar no WhatsApp
       </a>
     </section>
