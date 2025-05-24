@@ -3,374 +3,255 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Creche Reborn - Carinho e cuidado para seus bebês reborn</title>
-  <meta name="description" content="Creche Reborn oferece cuidados especiais, roupinhas sob medida e ensaios profissionais para seus bebês reborn.">
-  <!-- Fonte moderna similar à Apple -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>Creche Reborn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset básico */
-    * {
+    body {
+      font-family: 'Nunito', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Corpo e fonte */
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-color: #fffafa;
-      color: #222;
+      background-color: #fffafc;
+      color: #333;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
-
-    /* Container centralizado */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* Header estilo Apple */
     header {
-      background: linear-gradient(135deg, #fbb6ce 0%, #fda0c5 100%);
-      color: white;
-      padding: 3rem 0 2rem 0;
+      background-color: #fbb6ce;
+      color: #fff;
       text-align: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 2rem 1rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
-
-    header h1 {
-      font-weight: 700;
-      font-size: 3rem;
-      letter-spacing: 1.2px;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-weight: 400;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* Navegação horizontal */
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      padding: 1.2rem 0;
-      background-color: #fff;
-      border-bottom: 1px solid #eee;
-      font-weight: 600;
-      font-size: 1rem;
+      background-color: #fde6ef;
+      text-align: center;
+      padding: 0.8rem 0;
     }
-
     nav a {
+      color: #e91e63;
       text-decoration: none;
-      color: #e91e63;
-      position: relative;
-      transition: color 0.3s ease;
-      padding-bottom: 4px;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      color: #ad1457;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 3px;
-      background: #e91e63;
-      transition: width 0.3s ease;
-      border-radius: 2px;
-    }
-
-    nav a:hover::after,
-    nav a:focus::after {
-      width: 100%;
-    }
-
-    /* Seções com espaçamento */
-    section {
-      padding: 3rem 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
-
-    /* Títulos */
-    h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #e91e63;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    /* Parágrafos */
-    p {
-      max-width: 720px;
-      margin: 0 auto 1.5rem auto;
-      font-size: 1.1rem;
-      text-align: center;
-      color: #444;
-    }
-
-    /* Lista de serviços */
-    ul.services-list {
-      list-style: none;
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.8rem;
-      justify-content: center;
-    }
-
-    ul.services-list li {
-      background: #fde6ef;
-      color: #ad1457;
-      flex: 1 1 220px;
-      padding: 1.5rem 1rem;
-      border-radius: 12px;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgb(233 30 99 / 0.15);
-      text-align: center;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-
-    ul.services-list li:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgb(233 30 99 / 0.3);
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: text-decoration 0.2s;
       cursor: pointer;
     }
-
-    /* Botão WhatsApp */
-    .btn-whatsapp {
-      display: inline-block;
+    nav a:hover, nav a:focus {
+      text-decoration: underline;
+      outline: 3px solid #e91e63;
+      outline-offset: 2px;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      color: #e91e63;
+      font-size: 1.8rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      background: #fde6ef;
+      margin: 0.7rem 0;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: 600;
+      border: 2px solid transparent;
+    }
+    li:hover, li.selected {
+      background-color: #fbb6ce;
+      border-color: #e91e63;
+      color: #fff;
+    }
+    .contato {
+      background: #fde6ef;
+      padding: 1.5rem;
+      border-radius: 8px;
       margin-top: 2rem;
+      text-align: center;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 1rem;
       background-color: #25d366;
       color: white;
-      font-weight: 700;
-      padding: 0.9rem 2rem;
-      font-size: 1.2rem;
-      border-radius: 50px;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.2s;
     }
-
-    .btn-whatsapp:hover,
-    .btn-whatsapp:focus {
+    .whatsapp-btn:hover, .whatsapp-btn:focus {
       background-color: #128c7e;
-      box-shadow: 0 6px 20px rgba(18, 140, 126, 0.6);
+      outline: 3px solid #128c7e;
+      outline-offset: 2px;
     }
-
-    /* Footer */
     footer {
-      background: #fbb6ce;
-      color: white;
+      background-color: #fbb6ce;
+      color: #fff;
       text-align: center;
-      padding: 1.8rem 1rem;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    /* Seção Pagamentos inicialmente escondida */
+    #pagamentos {
+      display: none;
+      background:#e0f7fa; 
+      padding:1.5rem; 
+      border-radius:8px; 
+      margin-top:2rem;
+      text-align:center;
+    }
+    #pagamentos img {
+      margin: 1rem auto;
+      display: block;
+      max-width: 200px;
+    }
+    #btn-voltar {
+      margin-top: 1rem;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.4rem;
       font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      margin-top: 3rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
     }
-
-    /* Responsivo */
-    @media (max-width: 720px) {
-      nav {
-        flex-direction: column;
-        gap: 1rem;
+    #btn-voltar:hover {
+      background-color: #b0003a;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
       }
-
-      ul.services-list {
-        flex-direction: column;
-        gap: 1.5rem;
+      h2 {
+        font-size: 1.4rem;
       }
-
-      ul.services-list li {
-        flex: none;
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+      }
+      main {
+        padding: 1rem 0.2rem;
+      }
+      li {
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Creche Reborn</h1>
-      <p>Um lugar de carinho e cuidado para seus bebês reborn</p>
-    </div>
-  </header>
+<header>
+  <h1>Creche Reborn</h1>
+  <p>Um lugar de carinho e cuidado para os seus bebês reborn</p>
+</header>
 
-  <nav class="container" role="navigation" aria-label="Menu principal">
-    <a href="#sobre">Sobre Nós</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#contato">Contato</a>
-  </nav>
+<nav>
+  <a href="#sobre" onclick="showSection('sobre')">Sobre</a>
+  <a href="#servicos" onclick="showSection('servicos')">Serviços</a>
+  <a href="#pagamentos" onclick="showSection('pagamentos')" id="nav-pagamentos" style="display:none;">Pagamentos</a>
+</nav>
 
-  <main class="container" role="main">
-    <section id="sobre" tabindex="-1">
-      <h2>Sobre Nós</h2>
-      <p>Somos uma empresa dedicada ao carinho e cuidados especiais para bonecas reborn, combinando técnica, amor e profissionalismo para garantir o melhor para seu bebê.</p>
-      <p>Inspirados nas melhores práticas nacionais e internacionais, prezamos por qualidade, segurança e um atendimento personalizado para cada cliente.</p>
-    </section>
+<main>
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Somos apaixonados por bonecas reborn e criamos um espaço onde elas recebem o cuidado que merecem.</p>
+  </section>
 
-    <section id="servicos" tabindex="-1">
-      <h2>Serviços</h2>
-      <ul class="services-list" aria-label="Lista de serviços oferecidos">
-        <li>Banho e cuidados especiais</li>
-        <li>Roupinhas sob medida e personalizadas</li>
-        <li>Ensaio fotográfico profissional</li>
-        <li>Restauração e manutenção de bonecas</li>
-        <li>Consultoria para cuidados e manutenção</li>
-        <li>Eventos e workshops para colecionadores</li>
-      </ul>
-    </section>
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <ul>
+      <li onclick="selectService(this)">Banho e cuidados especiais</li>
+      <li onclick="selectService(this)">Roupinhas sob medida</li>
+      <li onclick="selectService(this)">Ensaio fotográfico profissional</li>
+      <li onclick="selectService(this)">Consultoria personalizada</li>
+      <li onclick="selectService(this)">Transporte seguro</li>
+    </ul>
+  </section>
 
-    <section id="contato" tabindex="-1" style="text-align:center;">
-      <h2>Contato</h2>
-      <p>Fale conosco pelo WhatsApp para tirar dúvidas e agendar serviços.</p>
-      <a
-        href="https://wa.me/5511987846694"
-        class="btn-whatsapp"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Conversar conosco no WhatsApp"
-      >
-        📲 Conversar no WhatsApp
-      </a>
-    </section>
-  </main>
+  <section id="pagamentos">
+    <h2>Pagamento do Serviço</h2>
+    <p id="servico-escolhido" style="font-weight:700; font-size:1.2rem; margin-bottom:1rem;"></p>
 
-  <footer>
-    <div class="container">
-      &copy; 2025 Creche Reborn. Todos os direitos reservados.
-    </div>
-  </footer>
+    <p>Use o QR Code abaixo para pagar via PIX rapidamente.</p>
+    <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=00020126580014BR.GOV.BCB.PIX01372c90695b-fe24-423f-9436-bbce1ed92b5205204000053039865404100.005802BR5910Creche Reborn6009Sao Paulo61080540900062070503***6304A13A" alt="QR Code PIX Creche Reborn" />
+    
+    <p>Ou copie a chave PIX abaixo:</p>
+    <input type="text" value="2c90695b-fe24-423f-9436-bbce1ed92b52" id="pix-key" readonly style="width:100%; padding:0.5rem; font-size:1rem; text-align:center; border:1px solid #ccc; border-radius:4px;" />
+    <button onclick="copyPixKey()" style="margin-top:1rem; background:#00796b; color:#fff; border:none; padding:0.8rem 1.5rem; border-radius:6px; font-weight:600; cursor:pointer;">
+      Copiar Chave PIX
+    </button>
 
-</body>
-</html>
+    <button id="btn-voltar" onclick="voltarServicos()">← Voltar para Serviços</button>
+  </section>
+</main>
 
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Creche Reborn - Carinho e cuidado para seus bebês reborn</title>
-  <meta name="description" content="Creche Reborn oferece cuidados especiais, roupinhas sob medida e ensaios profissionais para seus bebês reborn.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ... mantenha todo o estilo anterior, omitido aqui para brevidade ... */
-    /* Vou adicionar só a parte nova que vou criar logo abaixo */
-  </style>
-</head>
-<body>
-  <header> ... </header>
-  <nav> ... </nav>
-  <main class="container" role="main">
-    <!-- Sobre, Serviços, Contato mantidos -->
-
-    <section id="pix" style="background:#e0f7fa; padding:1.5rem; border-radius:8px; max-width:400px; margin:2rem auto; text-align:center;">
-  <h2>Pagamento via PIX</h2>
-  <p>Use o QR Code abaixo para pagar via PIX rapidamente.</p>
-  
-  <!-- QR Code gerado via Google Chart API -->
-  <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=00020126580014BR.GOV.BCB.PIX01372c90695b-fe24-423f-9436-bbce1ed92b5205204000053039865404100.005802BR5910Creche Reborn6009Sao Paulo61080540900062070503***6304A13A" alt="QR Code PIX Creche Reborn" style="margin: 1rem auto; display:block;"/>
-  
-  <p>Ou copie a chave PIX abaixo:</p>
-  <input type="text" value="2c90695b-fe24-423f-9436-bbce1ed92b52" id="pix-key" readonly style="width:100%; padding:0.5rem; font-size:1rem; text-align:center; border:1px solid #ccc; border-radius:4px;" />
-  <button onclick="copyPixKey()" style="margin-top:1rem; background:#00796b; color:#fff; border:none; padding:0.8rem 1.5rem; border-radius:6px; font-weight:600; cursor:pointer;">
-    Copiar Chave PIX
-  </button>
-  
-  <p style="font-size:0.85rem; color:#555; margin-top:1rem;">
-    Após o pagamento, envie o comprovante pelo WhatsApp para confirmar.
-  </p>
-</section>
+<footer>
+  <p>&copy; 2025 Creche Reborn. Todos os direitos reservados.</p>
+</footer>
 
 <script>
+  function showSection(id) {
+    // Esconde todas as seções
+    document.getElementById('sobre').style.display = 'none';
+    document.getElementById('servicos').style.display = 'none';
+    document.getElementById('pagamentos').style.display = 'none';
+
+    // Mostra a seção escolhida
+    document.getElementById(id).style.display = 'block';
+  }
+
+  // Inicialmente mostra a seção Sobre
+  showSection('sobre');
+
+  function selectService(element) {
+    // Marca o item selecionado
+    const itens = document.querySelectorAll('#servicos li');
+    itens.forEach(i => i.classList.remove('selected'));
+    element.classList.add('selected');
+
+    // Atualiza texto do serviço escolhido
+    document.getElementById('servico-escolhido').textContent = element.textContent;
+
+    // Exibe aba pagamentos
+    document.getElementById('nav-pagamentos').style.display = 'inline-block';
+
+    // Vai para a aba pagamentos
+    showSection('pagamentos');
+  }
+
   function copyPixKey() {
     const pixInput = document.getElementById('pix-key');
     pixInput.select();
-    pixInput.setSelectionRange(0, 99999); // para mobile
+    pixInput.setSelectionRange(0, 99999); // Para mobile
     document.execCommand('copy');
     alert('Chave PIX copiada!');
   }
+
+  function voltarServicos() {
+    // Remove seleção dos serviços
+    const itens = document.querySelectorAll('#servicos li');
+    itens.forEach(i => i.classList.remove('selected'));
+
+    // Esconde aba pagamentos no menu
+    document.getElementById('nav-pagamentos').style.display = 'none';
+
+    // Volta para aba serviços
+    showSection('servicos');
+  }
 </script>
 
-    
-    <section id="comprar" tabindex="-1">
-      <h2>Comprar Serviços</h2>
-      <form id="payment-form" style="max-width:400px; margin: 0 auto; text-align:left;">
-        <label for="service">Escolha o serviço:</label><br />
-        <select id="service" name="service" required style="width:100%; padding:0.5rem; margin-bottom:1rem; font-size:1rem;">
-          <option value="" disabled selected>Selecione...</option>
-          <option value="banho" data-price="5000">Banho e cuidados especiais - R$50,00</option>
-          <option value="roupinhas" data-price="7000">Roupinhas sob medida - R$70,00</option>
-          <option value="ensaio" data-price="15000">Ensaio fotográfico profissional - R$150,00</option>
-        </select>
-        <button id="checkout-button" type="submit" style="
-          background-color: #e91e63; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px;
-          font-weight: 700; font-size: 1.1rem; cursor: pointer; width: 100%;
-          transition: background-color 0.3s ease;
-        ">Pagar com Cartão</button>
-      </form>
-      <p style="font-size:0.9rem; color:#666; margin-top:1rem; text-align:center;">
-        Pagamento seguro via Stripe. Nenhum dado do cartão é armazenado no site.
-      </p>
-    </section>
-  </main>
-
-  <footer> ... </footer>
-
-  <!-- Stripe.js -->
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    // Chave pública de teste do Stripe (substitua pela sua)
-    const stripe = Stripe('pk_test_51MXXXXXXXXXXXXX'); // <-- troque pela sua chave real do dashboard Stripe
-
-    const checkoutButton = document.getElementById('checkout-button');
-    const form = document.getElementById('payment-form');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const select = document.getElementById('service');
-      const selectedOption = select.options[select.selectedIndex];
-
-      if (!selectedOption.value) {
-        alert('Por favor, selecione um serviço.');
-        return;
-      }
-
-      const price = selectedOption.getAttribute('data-price');
-
-      // Aqui você deve chamar seu backend para criar uma sessão de pagamento
-      // Mas para exemplo, usaremos um link de checkout simples via Stripe Checkout
-
-      // *** No mundo real, precisa backend seguro para criar checkoutSession ***
-
-      alert('Para implementar pagamentos reais, é necessário backend para criar sessão Stripe Checkout.');
-
-      // Exemplo: window.location.href = 'link_de_checkout_criado_pelo_backend';
-
-    });
-  </script>
 </body>
 </html>
