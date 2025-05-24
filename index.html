@@ -5,6 +5,275 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Creche Reborn - Carinho e cuidado para seus bebês reborn</title>
   <meta name="description" content="Creche Reborn oferece cuidados especiais, roupinhas sob medida e ensaios profissionais para seus bebês reborn.">
+  <!-- Fonte moderna similar à Apple -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Corpo e fonte */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #fffafa;
+      color: #222;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container centralizado */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header estilo Apple */
+    header {
+      background: linear-gradient(135deg, #fbb6ce 0%, #fda0c5 100%);
+      color: white;
+      padding: 3rem 0 2rem 0;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      letter-spacing: 1.2px;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-weight: 400;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Navegação horizontal */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1.2rem 0;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e91e63;
+      position: relative;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #ad1457;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 3px;
+      background: #e91e63;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    /* Seções com espaçamento */
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    /* Títulos */
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #e91e63;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Parágrafos */
+    p {
+      max-width: 720px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #444;
+    }
+
+    /* Lista de serviços */
+    ul.services-list {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: center;
+    }
+
+    ul.services-list li {
+      background: #fde6ef;
+      color: #ad1457;
+      flex: 1 1 220px;
+      padding: 1.5rem 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgb(233 30 99 / 0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    ul.services-list li:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgb(233 30 99 / 0.3);
+      cursor: pointer;
+    }
+
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: #25d366;
+      color: white;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-whatsapp:hover,
+    .btn-whatsapp:focus {
+      background-color: #128c7e;
+      box-shadow: 0 6px 20px rgba(18, 140, 126, 0.6);
+    }
+
+    /* Footer */
+    footer {
+      background: #fbb6ce;
+      color: white;
+      text-align: center;
+      padding: 1.8rem 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      margin-top: 3rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      ul.services-list {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      ul.services-list li {
+        flex: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Creche Reborn</h1>
+      <p>Um lugar de carinho e cuidado para seus bebês reborn</p>
+    </div>
+  </header>
+
+  <nav class="container" role="navigation" aria-label="Menu principal">
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main class="container" role="main">
+    <section id="sobre" tabindex="-1">
+      <h2>Sobre Nós</h2>
+      <p>Somos uma empresa dedicada ao carinho e cuidados especiais para bonecas reborn, combinando técnica, amor e profissionalismo para garantir o melhor para seu bebê.</p>
+      <p>Inspirados nas melhores práticas nacionais e internacionais, prezamos por qualidade, segurança e um atendimento personalizado para cada cliente.</p>
+    </section>
+
+    <section id="servicos" tabindex="-1">
+      <h2>Serviços</h2>
+      <ul class="services-list" aria-label="Lista de serviços oferecidos">
+        <li>Banho e cuidados especiais</li>
+        <li>Roupinhas sob medida e personalizadas</li>
+        <li>Ensaio fotográfico profissional</li>
+        <li>Restauração e manutenção de bonecas</li>
+        <li>Consultoria para cuidados e manutenção</li>
+        <li>Eventos e workshops para colecionadores</li>
+      </ul>
+    </section>
+
+    <section id="contato" tabindex="-1" style="text-align:center;">
+      <h2>Contato</h2>
+      <p>Fale conosco pelo WhatsApp para tirar dúvidas e agendar serviços.</p>
+      <a
+        href="https://wa.me/5511987846694"
+        class="btn-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Conversar conosco no WhatsApp"
+      >
+        📲 Conversar no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 Creche Reborn. Todos os direitos reservados.
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creche Reborn - Carinho e cuidado para seus bebês reborn</title>
+  <meta name="description" content="Creche Reborn oferece cuidados especiais, roupinhas sob medida e ensaios profissionais para seus bebês reborn.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* ... mantenha todo o estilo anterior, omitido aqui para brevidade ... */
